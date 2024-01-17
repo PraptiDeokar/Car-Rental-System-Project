@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+
+     
+    </asp:ContentPlaceHolder>
+    <link href="../CSS/StyleSheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body background="../CarImages/Untitled.png">
+
+
+    <form id="form1" runat="server">
+
+<div id="Header">
+
+<img src="../images/Car-rental-in-Mauritius-47679-1.jpg" alt="NA" 
+        style="height: 135px; width: 292px; margin-left: 0px"/>
+<h1>&nbsp;&nbsp;Car Rental System     </h1>             
+<div id="loginsection" >
+welcome 
+    <asp:LoginName ID="LoginName1" runat="server" />
+    <asp:LoginStatus ID="LoginStatus1" runat="server" 
+        LogoutAction="RedirectToLoginPage" />
+</div>
+</div>
+<div id="menubar">
+
+
+    <asp:Menu ID="Menu1" runat="server" BackColor="#F7F6F3" 
+        DynamicHorizontalOffset="2" Font-Bold="True" Font-Names="Cambria" 
+        Font-Size="Medium" ForeColor="#7C6F57" Orientation="Horizontal" 
+        StaticSubMenuIndent="10px" Width="100%">
+        <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+        <DynamicMenuStyle BackColor="#F7F6F3" />
+        <DynamicSelectedStyle BackColor="#5D7B9D" />
+        <Items>
+            <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Customer/Home.aspx"></asp:MenuItem>
+            <asp:MenuItem Text="Cars" Value="Cars" 
+                NavigateUrl="~/Customer/CarAvailable.aspx"></asp:MenuItem>
+            <asp:MenuItem Text="Booked Car" Value="Booked Car" 
+                NavigateUrl="~/Customer/BookingMaster.aspx"></asp:MenuItem>
+            <asp:MenuItem NavigateUrl="~/Customer/ChangePassword.aspx" 
+                Text="Change Password " Value="Change Password "></asp:MenuItem>
+            <asp:MenuItem NavigateUrl="~/Customer/UserFeedback.aspx" Text="feedback" 
+                Value="feedback"></asp:MenuItem>
+        </Items>
+        <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+        <StaticMenuItemStyle HorizontalPadding="10px" VerticalPadding="2px" />
+        <StaticSelectedStyle BackColor="#5D7B9D" />
+        <StaticItemTemplate>
+            <%# Eval("Text") %>
+        </StaticItemTemplate>
+    </asp:Menu>
+
+
+    </div>
+
+<div id="contents" style="background-image">
+<asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+</div>
+    <div id="footer">
+               Car Rental System    
+    </div>
+    </form>
+
+    
+    </body>
+</html>
